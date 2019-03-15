@@ -142,7 +142,7 @@ type AggregateResults interface {
 
 	// Map returns a map from tag name -> possible tag values,
 	// comprising search results.
-	Map() *AggregationResultsMap
+	// Map() *aggregationResultsMap
 
 	// Reset resets the AggregateResults object to initial state.
 	Reset(nsID ident.ID)
@@ -703,6 +703,12 @@ type Options interface {
 
 	// ResultsPool returns the results pool.
 	ResultsPool() ResultsPool
+
+	// SetAggregateResultsPool updates the aggregate results pool.
+	SetAggregateResultsPool(values AggregateResultsPool) Options
+
+	// AggregateResultsPool returns the aggregate results pool.
+	AggregateResultsPool() AggregateResultsPool
 
 	// SetDocumentArrayPool sets the document array pool.
 	SetDocumentArrayPool(value doc.DocumentArrayPool) Options
