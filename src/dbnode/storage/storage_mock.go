@@ -1123,6 +1123,21 @@ func (mr *MockdatabaseNamespaceMockRecorder) QueryIDs(ctx, query, opts interface
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "QueryIDs", reflect.TypeOf((*MockdatabaseNamespace)(nil).QueryIDs), ctx, query, opts)
 }
 
+// AggregateQuery mocks base method
+func (m *MockdatabaseNamespace) AggregateQuery(ctx context.Context, query index.Query, opts index.QueryOptions) (index.QueryResults, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "AggregateQuery", ctx, query, opts)
+	ret0, _ := ret[0].(index.QueryResults)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// AggregateQuery indicates an expected call of AggregateQuery
+func (mr *MockdatabaseNamespaceMockRecorder) AggregateQuery(ctx, query, opts interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "AggregateQuery", reflect.TypeOf((*MockdatabaseNamespace)(nil).AggregateQuery), ctx, query, opts)
+}
+
 // ReadEncoded mocks base method
 func (m *MockdatabaseNamespace) ReadEncoded(ctx context.Context, id ident.ID, start, end time.Time) ([][]xio.BlockReader, error) {
 	m.ctrl.T.Helper()
@@ -1738,6 +1753,21 @@ func (m *MocknamespaceIndex) Query(ctx context.Context, query index.Query, opts 
 func (mr *MocknamespaceIndexMockRecorder) Query(ctx, query, opts interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Query", reflect.TypeOf((*MocknamespaceIndex)(nil).Query), ctx, query, opts)
+}
+
+// AggregateQuery mocks base method
+func (m *MocknamespaceIndex) AggregateQuery(ctx context.Context, query index.Query, opts index.QueryOptions) (index.QueryResults, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "AggregateQuery", ctx, query, opts)
+	ret0, _ := ret[0].(index.QueryResults)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// AggregateQuery indicates an expected call of AggregateQuery
+func (mr *MocknamespaceIndexMockRecorder) AggregateQuery(ctx, query, opts interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "AggregateQuery", reflect.TypeOf((*MocknamespaceIndex)(nil).AggregateQuery), ctx, query, opts)
 }
 
 // Bootstrap mocks base method
