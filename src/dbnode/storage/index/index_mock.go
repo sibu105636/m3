@@ -208,7 +208,7 @@ func (mr *MockBlockMockRecorder) AddResults(arg0 interface{}) *gomock.Call {
 }
 
 // AggregateQuery mocks base method
-func (m *MockBlock) AggregateQuery(arg0 Query, arg1 QueryOptions, arg2 AggregateResults) error {
+func (m *MockBlock) AggregateQuery(arg0 Query, arg1 AggregateQueryOptions, arg2 AggregateResults) error {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "AggregateQuery", arg0, arg1, arg2)
 	ret0, _ := ret[0].(error)

@@ -141,6 +141,14 @@ type Database interface {
 		opts index.QueryOptions,
 	) (index.QueryResults, error)
 
+	// AggregateQuery resolves the given query into aggregated tags.
+	AggregateQuery(
+		ctx context.Context,
+		namespace ident.ID,
+		query index.Query,
+		opts index.AggregateQueryOptions,
+	) (index.AggregateResults, error)
+
 	// ReadEncoded retrieves encoded segments for an ID
 	ReadEncoded(
 		ctx context.Context,
@@ -283,8 +291,8 @@ type databaseNamespace interface {
 	AggregateQuery(
 		ctx context.Context,
 		query index.Query,
-		opts index.QueryOptions,
-	) (index.QueryResults, error)
+		opts index.AggregateQueryOptions,
+	) (index.AggregateResults, error)
 
 	// ReadEncoded reads data for given id within [start, end).
 	ReadEncoded(
@@ -485,8 +493,8 @@ type namespaceIndex interface {
 	AggregateQuery(
 		ctx context.Context,
 		query index.Query,
-		opts index.QueryOptions,
-	) (index.QueryResults, error)
+		opts index.AggregateQueryOptions,
+	) (index.AggregateResults, error)
 
 	// Bootstrap bootstraps the index the provided segments.
 	Bootstrap(

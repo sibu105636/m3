@@ -812,7 +812,7 @@ func (b *block) Query(
 
 func (b *block) AggregateQuery(
 	query Query,
-	opts QueryOptions,
+	opts AggregateQueryOptions,
 	results AggregateResults,
 ) error {
 	b.RLock()
