@@ -1,5 +1,23 @@
 # Changelog
 
+# 0.7.2 (2019-03-15)
+
+## Bug Fixes
+
+- **All Binaries**: Fix LD flags in release so that version, branch, build date, etc are packaged into the binary properly.
+
+# 0.7.1 (2019-03-15)
+
+## New Features
+
+- **M3Query**: Add per-query cost accounting to allow fine-grained controls on datapoint limits to Prometheus and Graphite style queries (#1207) (#1449)
+- **M3Query**: Add optional pickled return type for Graphite render endpoint (#1446)
+- **M3Query**: Drop NaNs from query results (#1458)
+
+## Bug Fixes
+
+- **M3DB**: Fix bug in postings list caching which could cause incorrect results on queries (#1461)
+
 # 0.7.0 (2019-03-12)
 
 ## Migration Disclaimer
